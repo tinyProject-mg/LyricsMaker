@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyrics Maker</title>
+    <style>
+        body{
+            font-family: Arial;
+        }
+        .origin {
+            width: 400px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            background: white;
+        }
+        .origin .music .source {
+            padding: 5px 0;
+        }
+        .origin .music .source input.filesource {
+            width: 80%;
+            width: calc(100% - 100px);
+            padding: 10px 0;
+            padding-left: 10px;
+            border-radius: 10px 0 0 10px;
+            border: 1px solid silver; 
+            font-size: 15px;
+        }
+        .origin .music .source input.loadmusic {
+            width: 20%;
+            width: calc(80px);
+            padding: 10px 0;
+            border-radius: 0 10px 10px 0;
+            border: 1px solid rgb(0, 98, 255); 
+            background: rgb(0, 98, 255); 
+            color: white;  
+            font-size: 15px;
+        }
+        .origin .music .audiocontrols {
+            padding: 5px 0;
+        }
+        .origin .music .audiocontrols audio {
+            width: 100%;
+        }
+        .origin .music .lyricssourcecontainer {
+            padding: 5px 0;
+        }
+        .origin .music .lyricssourcecontainer .lyricssource {
+            width: calc(100% - 22px);
+            height: 200px;
+            resize: none;
+            padding: 10px;
+            font-family: Arial;
+            font-size: 15px;
+        }
+        .origin .timerecorder button{
+            width: 100%;
+            border: 0; 
+            border-radius: 10px;
+            padding: 15px 40px;
+            background: rgb(0, 98, 255); 
+            color: white; 
+            font-size: large; 
+            cursor: pointer;
+        }
+        .result .lyrics .content p {
+            margin: 0;
+        }
+        .result .copy button {
+            position: fixed;
+            top: 0;
+            right: 430px;
+            width: 60px;
+            padding: 15px 0;
+            margin: 10px;
+            border-radius: 10px;
+            border: 1px solid rgb(89, 101, 119); 
+            background: rgb(89, 101, 119); 
+            color: white;  
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .result .download button {
+            position: fixed;
+            top: 50px;
+            right: 420px;
+            width: 100px;
+            padding: 15px 0;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid rgb(55, 140, 24); 
+            background: rgb(55, 140, 24); 
+            color: white;  
+            font-size: 15px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 760px) {
+            .origin {
+                width: calc(100% - 22px);
+                position: fixed;
+                top: auto;
+                bottom: 0;
+            }
+            .origin .music .lyricssourcecontainer .lyricssource {
+                height: 100px;
+            }
+            .result {
+                margin-bottom: 400px;
+            }
+            .result .copy button {
+                right: 10px;
+            }
+            .result .download button {
+                right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="origin">
+        <div class="music">
+            <div class="source">
+                <input type="text" placeholder="D:\musicpath\music_name..." class="filesource">
+                <input type="button" value="Load" class="loadmusic">
+            </div>
+            <div class="audiocontrols">
+                <audio src="" controls></audio>
+            </div>
+            <div class="lyricssourcecontainer">
+                <textarea name="lyricssource" placeholder="Lyrics..." class="lyricssource"></textarea>
+            </div>
+        </div>
+        <div class="timerecorder">
+            <button>Record time</button>
+        </div>
+    </div>
+    <div class="result">
+        <div class="lyrics">
+            <div class="content"></div>
+        </div>
+        <div class="copy">
+            <button>Copy</button>
+        </div>
+        <div class="download">
+            <button>Download</button>
+        </div>
+    </div>
+    <script src="LyricsMaker.js"></script>
+</body>
+</html>
